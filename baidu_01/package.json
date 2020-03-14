@@ -1,0 +1,11 @@
+{
+  "name": "baidu_01",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "matman build",
+    "build-dev": "matman build --dev"
+  },
+  "dependencies": {
+    "matman": "^4.0.7"
+  }
+}

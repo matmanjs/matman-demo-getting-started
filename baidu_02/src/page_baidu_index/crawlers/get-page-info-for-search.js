@@ -11,8 +11,8 @@ module.exports = () => {
  */
 function getSearchInputInfo() {
     return {
-        keyWorld: $('#kw').val(),
-        searchBtnText: $('#su').val()
+        keyWorld: jQuery('#kw').val(),
+        searchBtnText: jQuery('#su').val()
     };
 }
 
@@ -20,7 +20,7 @@ function getSearchInputInfo() {
  * 获取搜索结果相关的信息
  */
 function getSearchResultInfo() {
-    const jqContainer = $('#content_left');
+    const jqContainer = jQuery('#content_left');
     const result = {
         isExist: !!jqContainer.length,
         list: []
@@ -28,14 +28,14 @@ function getSearchResultInfo() {
 
     function getItemData(jqItem) {
         return {
-            title: $('.t', jqItem).text().trim(),
-            describe: $('.c-abstract', jqItem).text().trim(),
+            title: jQuery('.t', jqItem).text().trim(),
+            describe: jQuery('.c-abstract', jqItem).text().trim(),
             tpl: jqItem.attr('tpl')
         };
     }
 
-    $('.c-container', jqContainer).each(function () {
-        result.list.push(getItemData($(this)));
+    jQuery('.c-container', jqContainer).each(function () {
+        result.list.push(getItemData(jQuery(this)));
     });
 
     return result;

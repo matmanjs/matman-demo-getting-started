@@ -9,9 +9,9 @@ describe('百度首页：常规检查', function () {
 
     before(function () {
         return checkPage({ show: false, doNotCloseBrowser: false, useRecorder: true })
-            .then(function (result) {
+            .then(function (matmanResult) {
                 // console.log(JSON.stringify(result));
-                resultData = result;
+                resultData = matmanResult;
             });
     });
 

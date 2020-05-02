@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const checkPage = require('.');
+const checkPage = require('../src/page_baidu_index/cases/basic-check');
 
 describe('百度首页：常规检查', function () {
     this.timeout(30000);
@@ -8,7 +8,7 @@ describe('百度首页：常规检查', function () {
     let resultData;
 
     before(function () {
-        return checkPage({ show: false, doNotEnd: false, useRecorder: true })
+        return checkPage({ show: false, doNotCloseBrowser: false, useRecorder: true })
             .then(function (result) {
                 // console.log(JSON.stringify(result));
                 resultData = result;
@@ -30,12 +30,12 @@ describe('百度首页：常规检查', function () {
             expect(data.searchBtnTxt).to.equal('百度一下');
         });
 
-        it('顶部导航信息正确', function () {
-            expect(data.navInfo).to.eql({
-                'isExist': true,
-                'moreProduct': { 'href': 'http://www.baidu.com/more/', 'isExist': true, 'name': '更多产品' },
-                'setting': { 'href': 'http://www.baidu.com/gaoji/preferences.html', 'isExist': true, 'name': '设置' }
-            });
+        it('userAgent应该正确', function () {
+            expect(data.userAgent).to.equal('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36 mycustomua');
+        });
+
+        it('窗体宽度 width=1250', function () {
+            expect(data.width).to.equal(1250);
         });
     });
 });

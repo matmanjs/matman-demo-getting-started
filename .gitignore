@@ -108,3 +108,5 @@ dist
 *-lock.json
 
 build
+
+.yo-repository

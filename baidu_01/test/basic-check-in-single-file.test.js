@@ -1,3 +1,4 @@
+const path = require('path');
 const { expect } = require('chai');
 
 const matman = require('matman');
@@ -6,10 +7,18 @@ describe('百度首页：常规检查，使用单文件形式', function () {
     this.timeout(30000);
 
     it('检查基本信息', function (done) {
+        const MATMAN_ROOT_PATH = path.join(__dirname, '../');
+
         matman
 
             // 创建 PageDriver，页面驱动控制器
-            .createPageDriver(__filename, { doNotCloseBrowser: false, useRecorder: true, tag: __filename })
+            .createPageDriver(__filename, {
+                doNotCloseBrowser: false,
+                useRecorder: true,
+                tag: __filename,
+                rootPath: MATMAN_ROOT_PATH,
+                testerPath: __dirname
+            })
 
             // 无头浏览器使用 nightmare.js 框架提供，其底层用的是 Google 的 electron，基于 chromium 内核
             .useNightmare({ show: false })

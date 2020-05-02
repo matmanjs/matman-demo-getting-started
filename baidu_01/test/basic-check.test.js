@@ -1,4 +1,4 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 const checkPage = require('../src/page_baidu_index/cases/basic-check');
 

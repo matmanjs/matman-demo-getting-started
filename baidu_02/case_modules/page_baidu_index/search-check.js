@@ -26,20 +26,21 @@ function getResult(opts) {
         .goto('https://www.baidu.com')
 
         // 第一步：开始操作之前
-        .addAction('init', function (nightmareRun) {
-            // nightmareRun 支持所有的原始 nightmare 语法和对其定制的扩展功能
-            return nightmareRun.wait(500);
+        .addAction('init', function (nightmare) {
+            // nightmare 支持所有的原始 nightmare 语法和对其定制的扩展功能
+            return nightmare.wait(500);
         })
 
         // 第二步：搜索输入框输入: matman
-        .addAction('input_key_word', function (nightmareRun) {
-            // nightmareRun 支持所有的原始 nightmare 语法和对其定制的扩展功能
-            return nightmareRun.type('#kw', 'matman').wait(500);
+        .addAction('input_key_word', function (nightmare) {
+            // nightmare 支持所有的原始 nightmare 语法和对其定制的扩展功能
+            return nightmare.type('#kw', 'matman').wait(500);
         })
 
         // 第三步：点击搜索按钮，获得搜索结果
-        .addAction('click_to_search', function (nightmareRun) {
-            return nightmareRun.click('#su').wait('#content_left');
+        .addAction('click_to_search', function (nightmare) {
+            // nightmare 支持所有的原始 nightmare 语法和对其定制的扩展功能
+            return nightmare.click('#su').wait('#content_left');
         })
 
         // 需要等待某些条件达成，才开始运行爬虫脚本

@@ -46,7 +46,7 @@ function getResult(opts) {
         .wait('#su')
 
         // 执行爬虫脚本文件或者爬虫脚本函数
-        .evaluate('../crawlers/get-page-info-for-search.js')
+        .evaluate('./crawlers/get-page-info-for-search.js')
 
         // 执行自定义的方法
         .executeCustomFn((pageDriver) => {

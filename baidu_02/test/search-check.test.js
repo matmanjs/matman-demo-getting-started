@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const checkPage = require('../src/page_baidu_index/cases/search-check');
+const checkPage = require('../case_modules/page_baidu_index/search-check');
 
 describe('百度首页：搜索', function () {
     this.timeout(30000);

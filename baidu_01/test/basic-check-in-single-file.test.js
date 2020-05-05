@@ -17,7 +17,7 @@ describe('百度首页：常规检查，使用单文件形式', function () {
                 useRecorder: true,
                 tag: __filename,
                 rootPath: MATMAN_ROOT_PATH,
-                testerPath: __dirname
+                caseModulesPath: __dirname
             })
 
             // 无头浏览器使用 nightmare.js 框架提供，其底层用的是 Google 的 electron，基于 chromium 内核

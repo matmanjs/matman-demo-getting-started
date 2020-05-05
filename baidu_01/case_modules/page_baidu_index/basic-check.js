@@ -2,14 +2,13 @@ const path = require('path');
 const matman = require('matman');
 
 function getResult(opts) {
-    const MATMAN_ROOT_PATH = path.join(__dirname, '../../../');
+    const MATMAN_ROOT_PATH = path.join(__dirname, '../../');
 
     return matman
 
         // 创建 PageDriver，页面驱动控制器
         .createPageDriver(__filename, Object.assign({
-            rootPath: MATMAN_ROOT_PATH,
-            testerPath: path.join(MATMAN_ROOT_PATH, './src')
+            rootPath: MATMAN_ROOT_PATH
         }, opts))
 
         // 无头浏览器使用 nightmare.js 框架提供，其底层用的是 Google 的 electron，基于 chromium 内核

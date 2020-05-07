@@ -8,7 +8,7 @@ describe('百度首页：搜索', function () {
     let resultData;
 
     before(function () {
-        return checkPage({ show: false, doNotCloseBrowser: false, useRecorder: true })
+        return checkPage({ show: process.env.SHOW || false, doNotCloseBrowser: false, useRecorder: true })
             .then(function (result) {
                 // console.log(JSON.stringify(result));
                 resultData = result;

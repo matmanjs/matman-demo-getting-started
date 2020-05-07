@@ -2,13 +2,15 @@
     "name": "baidu_01",
     "version": "1.0.0",
     "scripts": {
-        "test": "mocha"
+        "test": "mocha",
+        "test:show": "cross-env SHOW=1 npm run test"
     },
     "dependencies": {
         "matman": "^5.0.2"
     },
     "devDependencies": {
         "chai": "^4.2.0",
+        "cross-env": "^7.0.2",
         "mocha": "^7.1.2"
     }
 }

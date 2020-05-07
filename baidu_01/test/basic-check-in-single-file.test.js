@@ -13,6 +13,7 @@ describe('百度首页：常规检查，使用单文件形式', function () {
 
             // 创建 PageDriver，页面驱动控制器
             .createPageDriver(__filename, {
+                show: process.env.SHOW || false,
                 doNotCloseBrowser: false,
                 useRecorder: true,
                 tag: __filename,

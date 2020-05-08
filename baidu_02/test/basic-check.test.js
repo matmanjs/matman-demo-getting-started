@@ -8,7 +8,7 @@ describe('百度首页：常规检查', function () {
     let resultData;
 
     before(function () {
-        return checkPage({ show: process.env.SHOW || false, doNotCloseBrowser: false, useRecorder: true })
+        return checkPage({ show: process.env.SHOW_BROWSER || false, doNotCloseBrowser: false, useRecorder: true })
             .then(function (matmanResult) {
                 // console.log(JSON.stringify(result));
                 resultData = matmanResult;

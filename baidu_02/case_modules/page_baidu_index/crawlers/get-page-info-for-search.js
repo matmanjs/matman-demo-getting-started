@@ -1,12 +1,3 @@
-module.exports = () => {
-    return {
-        title: document.title,
-        cookie: document.cookie,
-        searchInputInfo: getSearchInputInfo(),
-        searchResultInfo: getSearchResultInfo()
-    };
-};
-
 /**
  * 获取搜索框相关的信息
  */
@@ -41,3 +32,12 @@ function getSearchResultInfo() {
 
     return result;
 }
+
+module.exports = () => {
+    return {
+        title: document.title,
+        cookie: document.cookie,
+        searchInputInfo: getSearchInputInfo(),
+        searchResultInfo: getSearchResultInfo()
+    };
+};

@@ -67,9 +67,6 @@ describe('百度首页：常规检查，使用单文件形式', function () {
                 //userAgent应该正确
                 expect(data.userAgent).to.equal('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36 mycustomua');
 
-                // 窗体宽度 width=1250
-                expect(data.width).to.equal(1250);
-
                 done();
             });
     });

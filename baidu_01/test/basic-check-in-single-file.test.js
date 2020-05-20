@@ -11,8 +11,11 @@ describe('百度首页：常规检查，使用单文件形式', function () {
 
         matman
 
-            // 创建 PageDriver，页面驱动控制器
-            .createPageDriver(__filename, {
+            // 创建 Browser 对象，使用它对浏览器进行设置
+            .launch({ show: process.env.SHOW_BROWSER || false })
+
+            // 创建 Page 对象，使用它可以实现对浏览器页面的控制
+            .newPage(__filename, {
                 show: process.env.SHOW_BROWSER || false,
                 doNotCloseBrowser: false,
                 useRecorder: true,
@@ -20,9 +23,6 @@ describe('百度首页：常规检查，使用单文件形式', function () {
                 rootPath: MATMAN_ROOT_PATH,
                 caseModulesPath: __dirname
             })
-
-            // 无头浏览器使用 nightmare.js 框架提供，其底层用的是 Google 的 electron，基于 chromium 内核
-            .useNightmare({ show: false })
 
             // 设置浏览器参数
             .setDeviceConfig({

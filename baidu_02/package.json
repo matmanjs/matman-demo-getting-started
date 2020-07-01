@@ -4,7 +4,7 @@
   "scripts": {
     "build": "matman build",
     "build-dev": "matman build --dev",
-    "test": "npm run build && mocha",
+    "test": "mocha",
     "test:show": "cross-env SHOW_BROWSER=1 npm run test"
   },
   "dependencies": {

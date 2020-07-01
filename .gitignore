@@ -110,3 +110,5 @@ dist
 build
 
 .yo-repository
+
+.vscode

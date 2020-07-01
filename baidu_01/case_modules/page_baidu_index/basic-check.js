@@ -33,7 +33,7 @@ module.exports = async (opts) => {
   await pageDriver.setPageUrl("https://www.baidu.com");
 
   // 需要等待某些条件达成，才开始运行爬虫脚本
-  await pageDriver.addAction("SCAN_PAGE", async (page) => {
+  await pageDriver.addAction("init", async (page) => {
     await page.waitFor("#su");
   });
 
